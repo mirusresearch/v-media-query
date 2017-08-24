@@ -51,7 +51,9 @@ function initResize() {
     Object.keys(_vms).forEach(key => ++_vms[key][_nameSpace.methods].resize)
   } , 150)
 
-  window.addEventListener('resize', throttleResize)
+  if (typeof window !== 'undefined'){
+    window.addEventListener('resize', throttleResize)
+  }
 }
 
 function getArgs(args) {
